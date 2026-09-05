@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "johnjackhouzi",
+  "owner": {
+    "name": "John Houzi",
+    "url": "https://github.com/JohnJackHouzi"
+  },
+  "metadata": {
+    "description": "Skills for agents that work on production systems: prove what you claim, work safely in parallel, write clean French typography.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "prove-it",
+      "source": "./plugins/prove-it",
+      "description": "Stop your agent from saying \"done\" when it never checked. Captures real evidence - HTTP responses, browser network requests, console errors, screenshots - and returns a PROVEN / NOT PROVEN / UNPROVABLE verdict.",
+      "category": "testing",
+      "keywords": ["verification", "evidence", "qa", "hallucination", "production"]
+    }
+  ]
+}
