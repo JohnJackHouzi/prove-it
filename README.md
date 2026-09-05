@@ -11,7 +11,25 @@ working, and returns one of three verdicts: `PROVEN`, `NOT PROVEN`, or
 /plugin install prove-it@prove-it
 ```
 
-> Type these in Claude Code, not in your shell.
+> Type these in Claude Code (the interface you get by running `claude`), not in
+> your shell. From a plain shell, the same thing is:
+>
+> ```
+> claude plugin marketplace add JohnJackHouzi/prove-it
+> claude plugin install prove-it@prove-it
+> ```
+
+**What you get.** The `prove-it` skill, which fires on its own whenever the agent
+is about to claim something works, and a `/prove` command to ask for it directly.
+
+**Requirements.** `curl` and Python 3.8+ for the HTTP and ledger tools - both
+already on your machine. `capture_page.mjs` needs Node and Playwright, and falls
+back to your installed Chrome or Edge if Playwright's Chromium is not downloaded.
+Without any browser it reports `UNPROVABLE HERE` rather than a weaker proof.
+
+**Without Claude Code.** The scripts are standalone and exit non-zero when an
+expectation fails, so they work in CI or from any other agent:
+`git clone https://github.com/JohnJackHouzi/prove-it && prove-it/skills/prove-it/scripts/capture_http.sh https://example.com --expect-text "Example Domain"`
 
 ---
 
