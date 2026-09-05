@@ -148,6 +148,8 @@ dès qu'une attente n'est pas satisfaite.
 One repo per skill, so you install only what you want:
 [safe-worktree](https://github.com/JohnJackHouzi/safe-worktree) - run several
 agents on one repository without stealing each other's work.
+[typo-fr](https://github.com/JohnJackHouzi/typo-fr) - French typography
+that survives an AI, with a linter that never touches your code.
 
 ---
 
