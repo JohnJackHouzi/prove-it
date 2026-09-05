@@ -1,27 +1,28 @@
-# claude-skills
+# prove-it
 
-Skills for agents that work on systems already in production.
+**Stop your agent from saying "done" when it never checked.**
 
-They come from real incidents, not from a wish list. Each one encodes a mistake
-that was made, found, and paid for.
+A Claude Code skill that captures real evidence before a change is reported as
+working, and returns one of three verdicts: `PROVEN`, `NOT PROVEN`, or
+`UNPROVABLE HERE`.
 
 ```
-/plugin marketplace add JohnJackHouzi/claude-skills
-/plugin install prove-it@johnjackhouzi
+/plugin marketplace add JohnJackHouzi/prove-it
+/plugin install prove-it@prove-it
 ```
 
 > Type these in Claude Code, not in your shell.
 
 ---
 
-## prove-it
+## The problem
 
-**The problem.** Agents report success they never checked. The type-check passed,
+Agents report success they never checked. The type-check passed,
 so the page must load. The pixel is in the HTML, so it must fire. A subagent said
 it fixed six files, so six files must be fixed. Every one of those is a claim about
 a running system, backed by nothing that came from the running system.
 
-**What this does.** Before the agent is allowed to say "done", it captures an
+Before the agent is allowed to say "done", it captures an
 artifact that would look different if the change were broken, and returns one of
 three verdicts:
 
@@ -113,25 +114,14 @@ string in the repo. A subagent's summary. A screenshot taken before the deploy
 finished. "The logic is correct." The absence of an error you never looked for.
 
 The reasoning for each, with the failure it hides, is in
-[`fake-proofs.md`](plugins/prove-it/skills/prove-it/references/fake-proofs.md).
+[`fake-proofs.md`](skills/prove-it/references/fake-proofs.md).
 The per-claim capture recipes and their traps - stale CDN cache, CSP-blocked
 beacons, the 8192px screenshot fold, consent gating - are in
-[`proof-recipes.md`](plugins/prove-it/skills/prove-it/references/proof-recipes.md).
-
----
-
-## Coming next
-
-| Skill | What it does |
-|---|---|
-| `safe-worktree` | Run several agents on one repo without stealing each other's commits. Real isolated worktrees, the `node_modules` trap included. |
-| `typo-fr` | French typography that survives an AI: no em dashes, ASCII apostrophes, accents intact, non-breaking spaces where the language requires them. |
+[`proof-recipes.md`](skills/prove-it/references/proof-recipes.md).
 
 ---
 
 ## En français
-
-Trois skills nés d'incidents réels en production.
 
 `prove-it` empêche un agent d'annoncer une réussite qu'il n'a jamais vérifiée. Un
 `tsc` qui passe ne prouve pas qu'une page charge. Un pixel présent dans le HTML ne
@@ -144,12 +134,19 @@ Un `UNPROVABLE HERE` honnête vaut mieux qu'un « c'est bon » jamais vérifié.
 Installation dans Claude Code (pas dans le terminal) :
 
 ```
-/plugin marketplace add JohnJackHouzi/claude-skills
-/plugin install prove-it@johnjackhouzi
+/plugin marketplace add JohnJackHouzi/prove-it
+/plugin install prove-it@prove-it
 ```
 
 Les scripts fonctionnent aussi seuls, sans Claude, et sortent avec un code non nul
 dès qu'une attente n'est pas satisfaite.
+
+---
+
+## More skills
+
+One repo per skill, so you install only what you want:
+[github.com/JohnJackHouzi?tab=repositories](https://github.com/JohnJackHouzi?tab=repositories).
 
 ---
 
