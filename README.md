@@ -146,7 +146,8 @@ dès qu'une attente n'est pas satisfaite.
 ## More skills
 
 One repo per skill, so you install only what you want:
-[github.com/JohnJackHouzi?tab=repositories](https://github.com/JohnJackHouzi?tab=repositories).
+[safe-worktree](https://github.com/JohnJackHouzi/safe-worktree) - run several
+agents on one repository without stealing each other's work.
 
 ---
 
